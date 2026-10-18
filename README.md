@@ -5,7 +5,7 @@
 A responsive, motion-rich personal portfolio for Yatharth Vikram Singh, a B.Tech CSE (Data Science) student interested in programming, AI/ML, game logic, algorithms, and useful software.
 
 ## Features
-- Cinematic dark editorial design with restrained lime accents and custom SVG artwork
+- Cinematic dark editorial design with restrained silver accents and custom SVG artwork
 - Animated hero, moving path illustration, reveal transitions, and scroll progress
 - Filterable project showcase with GitHub repository links
 - Expandable interests, current learning path, and grouped toolkit
@@ -27,7 +27,7 @@ The portfolio intentionally avoids invented work history, achievements, contact 
 
 
 ## Motion components used
-- [React Bits Threads](https://reactbits.dev/backgrounds/threads) supplies the full-screen WebGL thread background, recolored in emerald and mint.
+- [React Bits Threads](https://reactbits.dev/backgrounds/threads) supplies the full-screen WebGL thread background, recolored in monochrome and monochrome.
 - [React Bits Spotlight Card](https://reactbits.dev/components/spotlight-card) supplies cursor-following light and border detail on project cards.
 - [Inspira UI Floating Card](https://inspira-ui.com/docs/en/components/cards/floating-card) is adapted from the Vue/Nuxt interaction into React for learning cards.
 - Typography uses Space Grotesk for headings, DM Sans for body copy, and IBM Plex Mono for labels.
