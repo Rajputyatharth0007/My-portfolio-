@@ -24,3 +24,18 @@ Open `index.html` in a browser. Google Fonts are optional and load from Google F
 - Indoor Map Navigator (secondary exploration)
 
 The portfolio intentionally avoids invented work history, achievements, contact details, usage metrics, and claims of production deployment.
+
+
+## Motion components used
+- [React Bits Threads](https://reactbits.dev/backgrounds/threads) supplies the full-screen WebGL thread background, recolored in emerald and mint.
+- [React Bits Spotlight Card](https://reactbits.dev/components/spotlight-card) supplies cursor-following light and border detail on project cards.
+- [Inspira UI Floating Card](https://inspira-ui.com/docs/en/components/cards/floating-card) is adapted from the Vue/Nuxt interaction into React for learning cards.
+- Typography uses Space Grotesk for headings, DM Sans for body copy, and IBM Plex Mono for labels.
+
+## Run locally
+```bash
+npm install
+npm run dev
+`
+
+Create a production build with `npm run build`. The site is static and does not require a backend.
