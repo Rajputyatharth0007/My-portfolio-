@@ -30,7 +30,7 @@ export default function InspiraFloatingCard({ children, className = '', rotateDe
       s.glare += (s.tg - s.glare) * .15;
       surface.style.transform = `translate3d(${s.x*translateDepth}px,${-s.y*translateDepth}px,${s.z}px) rotateX(${-s.y*rotateDepth}deg) rotateY(${s.x*rotateDepth}deg) scale(${s.scale})`;
       glare.style.opacity = String(s.glare);
-      glare.style.background = `radial-gradient(circle at ${(s.x+.5)*100}% ${(s.y+.5)*100}%, rgba(112,239,165,.24) 0%, rgba(112,239,165,.1) 25%, transparent 72%)`;
+      glare.style.background = `radial-gradient(circle at ${(s.x+.5)*100}% ${(s.y+.5)*100}%, rgba(207,207,207,.24) 0%, rgba(207,207,207,.1) 25%, transparent 72%)`;
       if (s.active || Math.abs(s.x)>.001 || Math.abs(s.y)>.001 || Math.abs(s.scale-1)>.001 || Math.abs(s.z)>.1 || s.glare>.01) frameRef.current = requestAnimationFrame(tick);
       else frameRef.current = 0;
     };
