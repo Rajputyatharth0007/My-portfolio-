@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { createRoot, flushSync } from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import markup from './portfolioMarkup.html?raw';
 import Threads from './components/Threads.jsx';
 import SpotlightCard from './components/SpotlightCard.jsx';
@@ -18,7 +18,7 @@ function mountProjectSpotlights() {
     host.className = 'project-spotlight-host';
     card.replaceWith(host);
     const root = createRoot(host);
-    flushSync(() => root.render(
+    root.render(
       <SpotlightCard
         {...attributes}
         className={className}
@@ -35,7 +35,7 @@ function mountProjectSpotlights() {
       >
         <div className="project-card-content" dangerouslySetInnerHTML={{ __html: inner }} />
       </SpotlightCard>
-    ));
+    );
     roots.push(root);
   });
   return roots;
@@ -50,11 +50,11 @@ function mountInspiraFloatingCards() {
     host.className = 'inspired-float-host';
     card.replaceWith(host);
     const root = createRoot(host);
-    flushSync(() => root.render(
+    root.render(
       <InspiraFloatingCard className={className}>
         <article className="learn-card" dangerouslySetInnerHTML={{ __html: inner }} />
       </InspiraFloatingCard>
-    ));
+    );
     roots.push(root);
   });
   return roots;
@@ -63,8 +63,10 @@ function mountInspiraFloatingCards() {
 export default function App() {
   useEffect(() => {
     const roots = [...mountProjectSpotlights(), ...mountInspiraFloatingCards()];
-    const cleanupInteractions = runLegacyInteractions();
+    let cleanupInteractions;
+    const initFrame = requestAnimationFrame(() => { cleanupInteractions = runLegacyInteractions(); });
     return () => {
+      cancelAnimationFrame(initFrame);
       cleanupInteractions?.();
       roots.forEach(root => root.unmount());
     };
