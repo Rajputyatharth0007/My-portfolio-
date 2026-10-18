@@ -1,0 +1,59 @@
+# Third-party component notices
+
+This portfolio adapts components from React Bits and Inspira UI. The app itself is not a component marketplace and does not sell, sublicense, or redistribute these components separately.
+
+## React Bits — Threads and Spotlight Card
+
+Source project: https://github.com/DavidHDev/react-bits  
+Components used:
+- `src/components/Threads.jsx`
+- `src/components/SpotlightCard.jsx`
+
+License: MIT + Commons Clause License Condition v1.0  
+Copyright (c) 2026 David Haz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, and distribute the Software as part of an application, website, or product, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+Commons Clause Restriction:
+You may use this Software, including for any commercial purpose, so long as you do not sell, sublicense, or redistribute the components themselves—whether alone, in a bundle, or as a ported version. The same restriction covers the React Bits tools and sounds. Exports may be used in an application, website, or product, but may not be sold or redistributed on their own as a component, background, or template pack.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## Inspira UI — Floating Card interaction
+
+Source project: https://github.com/unovue/inspira-ui  
+Original Vue/Nuxt component: `app/components/inspira/ui/floating-card/FloatingCard.vue`  
+React adaptation in this portfolio: `src/components/InspiraFloatingCard.jsx`
+
+License: MIT License  
+Copyright (c) 2024-2026 rahulv.dev
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
