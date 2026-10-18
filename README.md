@@ -1,21 +1,28 @@
 # Yatharth Vikram Singh — Portfolio
 
-**Live website:** https://yatharth-portfolio-eta.vercel.app
+A personal developer portfolio for Yatharth Vikram Singh, a B.Tech CSE (Data Science) student interested in programming, game logic, AI/ML fundamentals, and useful software.
 
-A responsive, motion-rich personal portfolio for Yatharth Vikram Singh, a B.Tech CSE (Data Science) student interested in programming, AI/ML, game logic, algorithms, and useful software.
+## Design
+- Black-and-white editorial layout with restrained borders and typography
+- A playable browser-based Tic Tac Toe demo with a minimax opponent
+- Project descriptions and links to GitHub repositories
+- Small, functional transitions; no particle field, neon glow, or decorative 3D effects
+- Responsive navigation, project filters, expandable interests, and reduced-motion support
 
-## Features
-- Cinematic dark editorial design with restrained silver accents and custom SVG artwork
-- Animated hero, moving path illustration, reveal transitions, and scroll progress
-- Filterable project showcase with GitHub repository links
-- Expandable interests, current learning path, and grouped toolkit
-- Responsive mobile navigation and reduced-motion support
-- Static HTML, CSS, and JavaScript — no framework build step or backend needed
+## Stack
+- React + Vite
+- Semantic HTML, CSS, and JavaScript
+- DM Sans and IBM Plex Mono typography
 
-## Run locally
-Open `index.html` in a browser. Google Fonts are optional and load from Google Fonts when online.
+## Local development
+```bash
+npm install
+npm run dev
+```
 
-## Projects
+Build for production with `npm run build`.
+
+## Projects highlighted
 - Tic Tac Toe AI — Python, Tkinter, Minimax
 - C Shopping List
 - Rock Paper Scissors in C
@@ -23,19 +30,4 @@ Open `index.html` in a browser. Google Fonts are optional and load from Google F
 - Fuel Service Route Finder
 - Indoor Map Navigator (secondary exploration)
 
-The portfolio intentionally avoids invented work history, achievements, contact details, usage metrics, and claims of production deployment.
-
-
-## Motion components used
-- [React Bits Threads](https://reactbits.dev/backgrounds/threads) supplies the full-screen WebGL thread background, recolored in monochrome and monochrome.
-- [React Bits Spotlight Card](https://reactbits.dev/components/spotlight-card) supplies cursor-following light and border detail on project cards.
-- [Inspira UI Floating Card](https://inspira-ui.com/docs/en/components/cards/floating-card) is adapted from the Vue/Nuxt interaction into React for learning cards.
-- Typography uses Space Grotesk for headings, DM Sans for body copy, and IBM Plex Mono for labels.
-
-## Run locally
-```bash
-npm install
-npm run dev
-`
-
-Create a production build with `npm run build`. The site is static and does not require a backend.
+The portfolio deliberately avoids invented work history, achievements, contact details, usage metrics, or production claims.
