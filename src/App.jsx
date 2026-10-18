@@ -22,7 +22,7 @@ function mountProjectSpotlights() {
       <SpotlightCard
         {...attributes}
         className={className}
-        spotlightColor="rgba(112,239,165,0.38)"
+        spotlightColor="rgba(215,215,215,0.38)"
         intensity={0.27}
         spotlightSize={310}
         softness={0.82}
@@ -75,8 +75,8 @@ export default function App() {
   return <>
     <div className="threads-background" aria-hidden="true">
       <Threads
-        color={[0.12, 0.36, 0.21]}
-        accentColor={[0.42, 0.94, 0.61]}
+        color={[0.25, 0.25, 0.25]}
+        accentColor={[0.78, 0.78, 0.78]}
         amplitude={1.35}
         distance={0.28}
         enableMouseInteraction
