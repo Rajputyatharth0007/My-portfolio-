@@ -228,6 +228,24 @@ footer{padding:25px 0;background:#050505}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 
 
-/* Hero now uses a single-column layout with no game demo panel. */
-.hero-grid{grid-template-columns:minmax(0,1fr)!important;gap:0!important}
+/* Cinematic monochrome portrait panel replacing the removed game demo. */
+.hero-grid{grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr)!important;align-items:center;gap:clamp(30px,4.7vw,68px)!important}
 .hero-copy-block{width:100%;max-width:850px}
+.portrait-panel{width:100%;max-width:490px;justify-self:end;min-width:0}
+.portrait-topline,.portrait-bottomline{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#777;font:9px "IBM Plex Mono",monospace;letter-spacing:.09em;text-transform:uppercase}
+.portrait-topline{padding:0 0 12px;border-bottom:1px solid #282828;margin-bottom:12px}
+.portrait-frame{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:.91;background:#0b0b0b;border:1px solid #292929}
+.portrait-image{display:block;width:100%;height:100%;object-fit:cover;object-position:center 43%;filter:grayscale(1) contrast(1.04) brightness(.82);transform:scale(1.035);animation:portrait-drift 18s ease-in-out infinite alternate;transition:filter .55s ease,transform .8s cubic-bezier(.2,.75,.25,1)}
+.portrait-frame::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,transparent 35%,rgba(0,0,0,.12) 58%,rgba(0,0,0,.88) 100%)}
+.portrait-overlay{position:absolute;z-index:2;left:clamp(18px,2vw,28px);right:18px;bottom:clamp(20px,2.6vw,32px);display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.portrait-index{font:9px "IBM Plex Mono",monospace;letter-spacing:.12em;color:#c9c9c9}
+.portrait-title{font:600 clamp(24px,2.55vw,34px)/1.08 "Space Grotesk",sans-serif;letter-spacing:-.055em;color:#f3f3f3}
+.portrait-subtitle{font:9px "IBM Plex Mono",monospace;letter-spacing:.13em;color:#b3b3b3;margin-top:4px}
+.portrait-side-label{position:absolute;z-index:2;top:18px;right:14px;writing-mode:vertical-rl;color:#e2e2e2;font:8px "IBM Plex Mono",monospace;letter-spacing:.14em;text-shadow:0 1px 8px #000}
+.portrait-bottomline{padding-top:12px;margin-top:12px;border-top:1px solid #282828}
+.portrait-panel:hover .portrait-frame{border-color:#5a5a5a}
+.portrait-panel:hover .portrait-image{filter:grayscale(1) contrast(1.08) brightness(.9);transform:scale(1.075)}
+@keyframes portrait-drift{0%{transform:scale(1.035) translate3d(0,0,0)}100%{transform:scale(1.075) translate3d(0,-4px,0)}}
+@media(max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr)!important;gap:32px!important}.portrait-panel{justify-self:start;max-width:600px}.portrait-frame{aspect-ratio:1.06}.portrait-image{object-position:center 39%}}
+@media(max-width:680px){.hero-grid{gap:28px!important}.portrait-panel{max-width:100%}.portrait-frame{aspect-ratio:.96}.portrait-overlay{left:18px;bottom:21px}.portrait-title{font-size:clamp(24px,7vw,32px)}.portrait-topline,.portrait-bottomline{font-size:8px;letter-spacing:.06em}}
+@media(prefers-reduced-motion:reduce){.portrait-image{animation:none!important;transform:none!important;transition:none!important}.portrait-panel:hover .portrait-image{transform:none!important}}
