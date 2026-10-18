@@ -107,3 +107,6 @@ h1,h2,h3,.hero h1,.section h2,.project h3,.interest-title,.learn-card h3{font-fa
 ::selection{background:rgba(112,239,165,.3);color:#f4fff7}
 @media(max-width:680px){.threads-background{opacity:.3}.spotlight-card.project{transform:none!important}.spotlight-card.project .project-card-content{min-height:0}}
 @media(prefers-reduced-motion:reduce){.hero:after,.hero h1 .lime,.signal-track{animation:none!important}.spotlight-card.project,.inspired-float__surface{transform:none!important;transition:none!important}.btn:before{display:none}}
+
+.inspired-float .learn-card:hover{transform:none}
+.spotlight-card.project .project-card-content{height:100%}
