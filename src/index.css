@@ -653,3 +653,172 @@ footer{padding:25px 0;background:#050505}
   text-transform: none;
   letter-spacing: 0.02em;
 }
+
+/* WCAG 2.2 AA contrast and layer fixes. Keep decorative effects from obscuring content. */
+/* Hide background-only pseudo layers that caused contrast tools to report unknown surfaces. */
+#root .page-content .hero::before,
+#root .page-content #toolkit::before,
+#root .page-content .learn-card::before {
+  display: none !important;
+}
+
+/* Selected filter: explicit dark text on a light surface (well above 4.5:1). */
+#root .page-content .filterbar .filter-btn {
+  color: #d6d6d6;
+  background-color: #050505;
+  border-color: #525252;
+}
+
+#root .page-content .filterbar .filter-btn[aria-pressed="true"],
+#root .page-content .filterbar .filter-btn:hover {
+  color: #080808 !important;
+  background-color: #e8e8e8;
+  border-color: #e8e8e8;
+}
+
+#root .page-content .filterbar .filter-btn:focus-visible {
+  outline: 2px solid #f1f1f1;
+  outline-offset: 3px;
+}
+
+/* Hero copy stays on the page's solid dark surface. */
+#root .page-content .hero-copy-block {
+  position: relative;
+  z-index: 1;
+  background-color: #050505;
+}
+
+#root .page-content .hero-copy-block .eyebrow,
+#root .page-content .hero-copy-block .intro {
+  color: #b8b8b8;
+}
+
+#root .page-content .hero-copy-block h1,
+#root .page-content .hero-copy-block .intro strong {
+  color: #f1f1f1;
+}
+
+#root .page-content .hero-copy-block h1 .accent {
+  color: #b8b8b8 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+
+/* Button labels and decorative glyphs use the same contrast-safe colors. */
+#root .page-content .btn.primary {
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+  color: #080808;
+}
+
+#root .page-content .btn.primary span[aria-hidden="true"] {
+  color: #080808 !important;
+}
+
+#root .page-content .actions > .btn:not(.primary) {
+  background-color: #050505;
+  border-color: #666666;
+  color: #f1f1f1;
+}
+
+#root .page-content .hero-meta {
+  color: #b8b8b8;
+}
+
+/* Project cards use a fixed dark surface, with readable copy for every card. */
+#root .page-content .project,
+#root .page-content .spotlight-card.project {
+  isolation: isolate;
+  background: #080808 !important;
+}
+
+#root .page-content .project > *,
+#root .page-content .spotlight-card.project .project-card-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+#root .page-content .project-meta,
+#root .page-content .type,
+#root .page-content .chip {
+  background-color: #080808;
+}
+
+#root .page-content .project-meta,
+#root .page-content .type {
+  color: #d0d0d0;
+}
+
+#root .page-content .project h3 {
+  color: #f1f1f1;
+}
+
+#root .page-content .project p {
+  color: #b8b8b8;
+}
+
+#root .page-content .chip {
+  color: #b8b8b8;
+  border-color: #454545;
+}
+
+#root .page-content .project-link {
+  color: #dedede;
+}
+
+/* Learning cards: remove the hover sheen from over text and set explicit text contrast. */
+#root .page-content .learn-card,
+#root .page-content .inspired-float .learn-card {
+  position: relative;
+  isolation: isolate;
+  background: #080808 !important;
+}
+
+#root .page-content .learn-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+#root .page-content .learn-card .label {
+  color: #dedede;
+}
+
+#root .page-content .learn-card h3 {
+  color: #f1f1f1;
+}
+
+#root .page-content .learn-card p {
+  color: #b8b8b8;
+}
+
+/* Toolkit keeps its restrained appearance but no longer depends on a decorative overlay. */
+#root .page-content .tool {
+  background-color: #050505;
+}
+
+#root .page-content .tool h3,
+#root .page-content #toolkit .index {
+  color: #dedede;
+}
+
+#root .page-content #toolkit .head h2 {
+  color: #f1f1f1;
+}
+
+#root .page-content #toolkit .summary {
+  color: #b8b8b8;
+}
+
+#root .page-content .skill {
+  color: #d0d0d0;
+  background-color: #050505;
+  border-color: #454545;
+}
+
+#root .page-content .skill:hover {
+  color: #080808;
+  background-color: #ededed;
+  border-color: #ededed;
+}
+
