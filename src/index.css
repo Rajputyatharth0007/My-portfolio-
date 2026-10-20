@@ -249,3 +249,282 @@ footer{padding:25px 0;background:#050505}
 @media(max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr)!important;gap:32px!important}.portrait-panel{justify-self:start;max-width:600px}.portrait-frame{aspect-ratio:1.06}.portrait-image{object-position:center 39%}}
 @media(max-width:680px){.hero-grid{gap:28px!important}.portrait-panel{max-width:100%}.portrait-frame{aspect-ratio:.96}.portrait-overlay{left:18px;bottom:21px}.portrait-title{font-size:clamp(24px,7vw,32px)}.portrait-topline,.portrait-bottomline{font-size:8px;letter-spacing:.06em}}
 @media(prefers-reduced-motion:reduce){.portrait-image{animation:none!important;transform:none!important;transition:none!important}.portrait-panel:hover .portrait-image{transform:none!important}}
+
+
+/* Usability audit fixes: unified type scale, readable labels, and grayscale text tokens. */
+:root {
+  --text-primary: #f1f1f1;
+  --text-secondary: #b8b8b8;
+  --text-muted: #9b9b9b;
+  --text-subtle: #858585;
+  --text-on-light: #111111;
+  --text-on-light-muted: #555555;
+
+  --type-label: 0.75rem;  /* 12px */
+  --type-body: 0.875rem;  /* 14px */
+  --type-ui: 1rem;        /* 16px */
+  --type-card-title: 1.125rem; /* 18px */
+  --type-title: 1.5rem;   /* 24px */
+  --type-section: 2.625rem; /* 42px */
+  --type-hero: 3.5rem;    /* 56px */
+}
+
+/* Keep the interface to seven deliberate text sizes: 12, 14, 16, 18, 24, 42 and 56px. */
+#root .page-content,
+#root .page-content .brand,
+#root .page-content .monogram,
+#root .page-content .eyebrow,
+#root .page-content .navlinks a,
+#root .page-content .hero-meta,
+#root .page-content .portrait-topline,
+#root .page-content .portrait-bottomline,
+#root .page-content .portrait-index,
+#root .page-content .portrait-subtitle,
+#root .page-content .portrait-side-label,
+#root .page-content .index,
+#root .page-content .stamp,
+#root .page-content .principle .label,
+#root .page-content .filter-btn,
+#root .page-content .project-meta,
+#root .page-content .type,
+#root .page-content .chip,
+#root .page-content .project-link,
+#root .page-content .interest-num,
+#root .page-content .plus,
+#root .page-content .learn-card .label,
+#root .page-content .tool h3,
+#root .page-content .skill,
+#root .page-content .footer-meta,
+#root .page-content .footer-bottom,
+#root .page-content .footer-top > a:last-child {
+  font-size: var(--type-label);
+}
+
+#root .page-content .intro,
+#root .page-content .summary,
+#root .page-content .about-copy p:not(.lead),
+#root .page-content .hero-meta,
+#root .page-content .principle p,
+#root .page-content .project p,
+#root .page-content .interest-intro,
+#root .page-content .interest-summary,
+#root .page-content .more,
+#root .page-content .learn-card p,
+#root .page-content .skill {
+  font-size: var(--type-body);
+}
+
+#root .page-content .principle b,
+#root .page-content .interest-title {
+  font-size: var(--type-ui);
+}
+
+#root .page-content .learn-card h3 {
+  font-size: var(--type-card-title);
+}
+
+#root .page-content .project h3,
+#root .page-content .portrait-title,
+#root .page-content .lead {
+  font-size: var(--type-title);
+}
+
+#root .page-content .hero h1 {
+  font-size: var(--type-hero);
+}
+
+#root .page-content .section h2,
+#root .page-content .cta h2 {
+  font-size: var(--type-section);
+}
+
+#root .page-content .about-mark,
+#root .page-content .interest-layout .about-mark[style] {
+  font-size: var(--type-hero) !important;
+}
+
+/* All foreground text uses a small, intentional grayscale palette. */
+#root .page-content,
+#root .page-content h1,
+#root .page-content h2,
+#root .page-content h3,
+#root .page-content p,
+#root .page-content a,
+#root .page-content button,
+#root .page-content span,
+#root .page-content b,
+#root .page-content strong,
+#root .page-content .brand,
+#root .page-content .portrait-title,
+#root .page-content .interest-title {
+  color: var(--text-primary);
+}
+
+#root .page-content .intro,
+#root .page-content .about-copy p:not(.lead),
+#root .page-content .summary,
+#root .page-content .hero-meta,
+#root .page-content .principle p,
+#root .page-content .project p,
+#root .page-content .interest-intro,
+#root .page-content .interest-summary,
+#root .page-content .more,
+#root .page-content .learn-card p,
+#root .page-content .skill,
+#root .page-content .chip {
+  color: var(--text-secondary);
+}
+
+#root .page-content .eyebrow,
+#root .page-content .index,
+#root .page-content .stamp,
+#root .page-content .project-meta,
+#root .page-content .type,
+#root .page-content .portrait-topline,
+#root .page-content .portrait-bottomline,
+#root .page-content .portrait-index,
+#root .page-content .portrait-subtitle,
+#root .page-content .portrait-side-label,
+#root .page-content .principle .label,
+#root .page-content .filter-btn,
+#root .page-content .interest-num,
+#root .page-content .plus,
+#root .page-content .learn-card .label,
+#root .page-content .tool h3,
+#root .page-content .footer-meta,
+#root .page-content .footer-bottom {
+  color: var(--text-muted);
+}
+
+#root .page-content .navlinks a,
+#root .page-content .project-link,
+#root .page-content .footer-top > a:last-child {
+  color: var(--text-secondary);
+}
+
+#root .page-content .btn.primary {
+  color: var(--text-on-light);
+}
+
+#root .page-content .cta,
+#root .page-content .cta h2,
+#root .page-content .cta p,
+#root .page-content .cta a,
+#root .page-content .cta .btn {
+  color: var(--text-on-light);
+}
+
+#root .page-content .cta .eyebrow {
+  color: var(--text-on-light-muted);
+}
+
+/* Fix the audit's small copy and long all-caps labels. */
+#root .page-content .portrait-topline,
+#root .page-content .portrait-bottomline {
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+#root .page-content .portrait-index {
+  letter-spacing: 0.04em;
+}
+
+#root .page-content .portrait-subtitle {
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  margin-top: 4px;
+}
+
+#root .page-content .portrait-side-label {
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 8px #000;
+}
+
+#root .page-content .hero-meta {
+  line-height: 1.7;
+}
+
+#root .page-content .principle p {
+  line-height: 1.7 !important;
+}
+
+#root .page-content .project-meta {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+#root .page-content .tool h3 {
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+#root .page-content .section h2,
+#root .page-content .cta h2 {
+  line-height: 1.08;
+}
+
+#root .page-content .hero h1 {
+  line-height: 1.04;
+}
+
+#root .page-content .about-mark,
+#root .page-content .interest-layout .about-mark[style] {
+  line-height: 1;
+}
+
+#root .page-content .footer-bottom {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+#root .page-content .toggle {
+  font-size: var(--type-title);
+}
+
+@media (max-width: 900px) {
+  #root .page-content .hero h1 {
+    font-size: var(--type-section);
+  }
+
+  #root .page-content .about-mark,
+  #root .page-content .interest-layout .about-mark[style] {
+    font-size: var(--type-section) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  #root .page-content .hero h1,
+  #root .page-content .section h2,
+  #root .page-content .cta h2 {
+    font-size: var(--type-section);
+  }
+
+  #root .page-content .about-mark,
+  #root .page-content .interest-layout .about-mark[style] {
+    font-size: var(--type-section) !important;
+  }
+
+  #root .page-content .portrait-topline,
+  #root .page-content .portrait-bottomline {
+    gap: 8px;
+  }
+
+  #root .page-content .portrait-side-label {
+    writing-mode: vertical-rl;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root .page-content .portrait-image {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
