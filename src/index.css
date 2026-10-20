@@ -528,3 +528,22 @@ footer{padding:25px 0;background:#050505}
     transform: none !important;
   }
 }
+
+
+/* Final type/color consistency for interactive controls and the hero accent. */
+#root .page-content .btn {
+  font-size: var(--type-body);
+}
+
+#root .page-content .hero-meta,
+#root .page-content .skill {
+  font-size: var(--type-label);
+}
+
+#root .page-content .about-mark {
+  color: var(--text-subtle);
+}
+
+#root .page-content .hero h1 .accent {
+  color: var(--text-secondary) !important;
+}
