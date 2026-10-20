@@ -648,3 +648,8 @@ footer{padding:25px 0;background:#050505}
   outline-offset: 4px;
 }
 
+/* Usability fix: keep the footer sentence in its authored sentence case. */
+#root .page-content .footer-meta {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
