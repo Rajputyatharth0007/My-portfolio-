@@ -547,3 +547,104 @@ footer{padding:25px 0;background:#050505}
 #root .page-content .hero h1 .accent {
   color: var(--text-secondary) !important;
 }
+
+/* WCAG contrast remediation: explicit surfaces and foregrounds for audited content. */
+/* The same page-dark surface lets the hero's decorative glow stay behind the copy. */
+#root .page-content .hero-copy-block {
+  position: relative;
+  z-index: 1;
+  background-color: #050505;
+}
+
+#root .page-content .hero-copy-block .eyebrow {
+  color: #b8b8b8;
+}
+
+#root .page-content .hero-copy-block h1 {
+  color: #f1f1f1;
+}
+
+#root .page-content .hero-copy-block h1 .accent {
+  color: #b8b8b8 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+
+#root .page-content .hero-copy-block .intro {
+  color: #b8b8b8;
+}
+
+#root .page-content .hero-copy-block .intro strong {
+  color: #f1f1f1;
+}
+
+/* Keep button foreground/background pairs independent of inherited span colors. */
+#root .page-content .btn.primary {
+  background-color: #f0f0f0;
+  color: #111111;
+  border-color: #f0f0f0;
+}
+
+#root .page-content .btn.primary span[aria-hidden="true"] {
+  color: #111111 !important;
+}
+
+#root .page-content .actions > .btn:not(.primary) {
+  background-color: #050505;
+  color: #f1f1f1;
+  border-color: #666666;
+}
+
+#root .page-content .hero-meta {
+  color: #b8b8b8;
+}
+
+/* The toplines use the page surface; their small labels retain AA contrast. */
+#root .page-content .portrait-topline,
+#root .page-content .portrait-bottomline {
+  background-color: #050505;
+}
+
+#root .page-content .portrait-topline span,
+#root .page-content .portrait-bottomline span {
+  color: #b8b8b8;
+}
+
+/* Compact opaque backing behind copy on the photograph, without a large panel. */
+#root .page-content .portrait-index,
+#root .page-content .portrait-title,
+#root .page-content .portrait-subtitle {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: #050505;
+  padding: 4px 6px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+#root .page-content .portrait-index,
+#root .page-content .portrait-title {
+  color: #f1f1f1;
+}
+
+#root .page-content .portrait-subtitle {
+  color: #b8b8b8;
+}
+
+#root .page-content .portrait-side-label {
+  color: #f1f1f1;
+  background-color: #050505;
+  padding: 6px 4px;
+  text-shadow: none;
+}
+
+/* Maintain contrast during keyboard navigation and interaction. */
+#root .page-content a:focus-visible,
+#root .page-content button:focus-visible {
+  outline: 2px solid #f1f1f1;
+  outline-offset: 4px;
+}
+
