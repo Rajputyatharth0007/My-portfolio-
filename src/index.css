@@ -1036,3 +1036,27 @@ footer .monogram { background: linear-gradient(145deg, rgba(0,123,167,.2), rgba(
 @media (prefers-reduced-motion: reduce) {
   .hero h1 .accent { animation: none !important; }
 }
+
+
+/* Full-page brand motion layer: the existing WebGL threads blend Cerulean and Neon Rose. */
+.brand-motion-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 16% 18%, rgba(0,123,167,.13), transparent 34%),
+    radial-gradient(ellipse at 82% 62%, rgba(255,45,149,.09), transparent 37%),
+    #0A0A0A;
+}
+.brand-motion-bg .threads-container { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .88; }
+.brand-motion-bg .threads-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#root { background: #0A0A0A; }
+#root .page-content { background: transparent; position: relative; z-index: 2; }
+@media (prefers-reduced-motion: reduce) {
+  .brand-motion-bg { opacity: .28; }
+}
+@media (max-width: 680px) {
+  .brand-motion-bg .threads-container { opacity: .62; }
+}
