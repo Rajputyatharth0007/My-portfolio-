@@ -939,3 +939,100 @@ footer .footer-top > a:last-child { color: #ff75b8; }
 @media (prefers-reduced-motion: reduce) {
   .progress, .btn, .navlinks a { transition: none !important; }
 }
+
+
+/* Cohesive three-color blend, carried through the whole portfolio. */
+:root {
+  --brand-blend: linear-gradient(115deg, var(--brand-cerulean) 0%, var(--brand-rose) 100%);
+  --brand-soft-blue: rgba(0, 123, 167, .16);
+  --brand-soft-rose: rgba(255, 45, 149, .12);
+}
+body {
+  background:
+    radial-gradient(ellipse at 8% 16%, var(--brand-soft-blue), transparent 29rem),
+    radial-gradient(ellipse at 94% 43%, var(--brand-soft-rose), transparent 31rem),
+    var(--brand-jet);
+}
+header {
+  background: rgba(10, 10, 10, .94);
+  border-image: linear-gradient(90deg, rgba(0,123,167,.6), rgba(255,45,149,.55)) 1;
+}
+.progress { background: var(--brand-blend); }
+.brand .monogram { color: #f1f1f1; background: linear-gradient(145deg, rgba(0,123,167,.24), rgba(255,45,149,.2)); }
+.hero {
+  border-bottom-color: rgba(0,123,167,.28);
+}
+.hero-copy-block .eyebrow {
+  color: #80d9f5;
+}
+.hero-copy-block .eyebrow:before {
+  background: var(--brand-blend);
+  height: 2px;
+}
+.hero h1 .accent {
+  background: linear-gradient(105deg, #61c9ee 4%, #ff2d95 96%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+.actions > .btn.primary {
+  background: var(--brand-blend);
+  border-color: transparent;
+  color: #fff;
+}
+.actions > .btn.primary span[aria-hidden="true"] { color: #fff !important; }
+.actions > .btn:not(.primary) {
+  border-color: rgba(0,123,167,.6);
+}
+.section { border-bottom-color: rgba(0,123,167,.22); }
+.section .index,
+#work .index,
+#toolkit .index {
+  color: #67c7e8;
+}
+.about-mark {
+  background: linear-gradient(140deg, rgba(0,123,167,.72), rgba(255,45,149,.72));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.principle { border-image: linear-gradient(90deg, rgba(0,123,167,.8), rgba(255,45,149,.5)) 1; }
+.interest-list { border-top-color: rgba(0,123,167,.45); }
+.interest { border-bottom-color: rgba(255,45,149,.18); }
+.interest[aria-expanded="true"] {
+  background: linear-gradient(100deg, rgba(0,123,167,.13), rgba(255,45,149,.08));
+}
+.learn-card, .tool {
+  border-color: rgba(0,123,167,.36);
+}
+.learn-card:hover, .tool:hover {
+  border-color: rgba(255,45,149,.68);
+}
+.skill {
+  border-color: rgba(0,123,167,.46);
+  background: linear-gradient(120deg, rgba(0,123,167,.07), rgba(255,45,149,.04));
+}
+.skill:hover {
+  background: var(--brand-blend);
+  border-color: transparent;
+  color: #fff !important;
+}
+#contact {
+  background:
+    radial-gradient(ellipse at 8% 80%, rgba(0,123,167,.28), transparent 45%),
+    radial-gradient(ellipse at 92% 15%, rgba(255,45,149,.22), transparent 42%),
+    #0A0A0A;
+  border-top-color: rgba(0,123,167,.48);
+}
+#contact .btn {
+  background: var(--brand-blend);
+  border-color: transparent;
+  color: #fff;
+}
+#contact .btn:hover { filter: brightness(1.12); }
+footer { border-top-color: rgba(255,45,149,.25); }
+footer .monogram { background: linear-gradient(145deg, rgba(0,123,167,.2), rgba(255,45,149,.2)); }
+::selection { background: rgba(255,45,149,.48); color: #fff; }
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 .accent { animation: none !important; }
+}
