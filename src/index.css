@@ -1326,3 +1326,27 @@ html, body, #root { min-height: 100%; background: #0A0A0A !important; }
 #root .page-content .portrait-frame::after {
   background: linear-gradient(180deg, rgba(0,0,0,.08) 0%, transparent 43%, rgba(0,0,0,.08) 58%, rgba(0,0,0,.72) 100%) !important;
 }
+
+
+/* Accessible, high-contrast contact section and consistent social profile links. */
+#root .page-content .cta {
+  background: linear-gradient(115deg, rgba(0,123,167,.18), rgba(255,45,149,.14)) !important;
+  color: #f7f7f7 !important;
+}
+#root .page-content .cta h2,
+#root .page-content .cta p,
+#root .page-content .cta .eyebrow { color: #f7f7f7 !important; }
+#root .page-content .cta .eyebrow { color: #78d9f5 !important; }
+#root .page-content .cta-note { margin: 14px 0 18px; color: #d4d4d4 !important; font-size: 14px; line-height: 1.65; }
+#root .page-content .social-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+#root .page-content .social-link {
+  display:inline-flex; align-items:center; gap:9px; padding:11px 15px; min-height:42px;
+  color:#f7f7f7 !important; text-decoration:none !important; background:rgba(10,10,10,.62);
+  border:1px solid rgba(0,123,167,.65); border-radius:6px;
+  transition:border-color .2s ease, background .2s ease, transform .2s ease;
+}
+#root .page-content .social-link span { color:#ff72b8; font-weight:700; }
+#root .page-content .social-link:hover { border-color:#FF2D95; background:rgba(255,45,149,.12); transform:translateY(-2px); }
+#root .page-content .social-link:focus-visible { outline:2px solid #FF2D95; outline-offset:3px; }
+@media (max-width:680px) { #root .page-content .social-links { gap:8px; } #root .page-content .social-link { padding:10px 12px; } }
+@media (prefers-reduced-motion:reduce) { #root .page-content .social-link { transition:none; } }
