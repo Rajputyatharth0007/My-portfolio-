@@ -1366,3 +1366,11 @@ html, body, #root { min-height: 100%; background: #0A0A0A !important; }
 #root .page-content .portrait-frame::before {
   box-shadow: none !important;
 }
+
+
+/* Clearer founder / product positioning. */
+#root .page-content .hero-meta { max-width: 560px; }
+#root .page-content .project[data-category~="exploration"] .project-link[aria-label] {
+  color: #78d9f5;
+  cursor: default;
+}
