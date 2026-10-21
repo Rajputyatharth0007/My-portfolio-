@@ -1060,3 +1060,67 @@ footer .monogram { background: linear-gradient(145deg, rgba(0,123,167,.2), rgba(
 @media (max-width: 680px) {
   .brand-motion-bg .threads-container { opacity: .62; }
 }
+
+
+/* FIX: make the animated brand palette visible across the actual page. */
+:root {
+  --bg: #0A0A0A;
+  --surface: #101014;
+  --text: #f4f4f6;
+  --muted: #b4b5c0;
+  --line: rgba(0,123,167,.28);
+  --accent: #007BA7;
+  --highlight: #FF2D95;
+  --brand-jet: #0A0A0A;
+  --brand-cerulean: #007BA7;
+  --brand-rose: #FF2D95;
+}
+html, body, #root, .page-content { background-color: #0A0A0A !important; }
+.brand-motion-bg {
+  z-index: 1 !important;
+  opacity: 1 !important;
+  background:
+    radial-gradient(ellipse at 18% 20%, rgba(0,123,167,.24), transparent 38%),
+    radial-gradient(ellipse at 82% 58%, rgba(255,45,149,.17), transparent 42%),
+    #0A0A0A !important;
+  mix-blend-mode: screen;
+}
+.brand-motion-bg .threads-container { opacity: 1 !important; }
+.page-content { z-index: 2 !important; }
+.page-content header { background: rgba(10,10,10,.78) !important; border-bottom-color: rgba(0,123,167,.35) !important; }
+.page-content .hero,
+.page-content .section,
+.page-content .cta,
+.page-content footer,
+.page-content .signal-marquee { background-color: transparent !important; }
+.page-content .hero:before,
+.page-content .hero:after { opacity: .48; }
+.page-content .hero h1 .accent,
+.page-content .hero h1 .lime {
+  background: linear-gradient(105deg, #007BA7 0%, #79dcf5 32%, #FF2D95 72%, #ff8bc4 100%) !important;
+  background-size: 180% auto !important;
+  color: transparent !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+.page-content .eyebrow,
+.page-content .section .index { color: #66c9e9 !important; }
+.page-content .eyebrow:before,
+.page-content .progress { background: linear-gradient(90deg, #007BA7, #FF2D95) !important; }
+.page-content .btn.primary,
+.page-content .cta { background: linear-gradient(115deg, #007BA7, #FF2D95) !important; color: #fff !important; border-color: transparent !important; }
+.page-content .project,
+.page-content .learn-card,
+.page-content .spotlight-card.project { background-color: rgba(10,10,10,.72) !important; border-color: rgba(0,123,167,.4) !important; }
+.page-content .project:hover,
+.page-content .learn-card:hover,
+.page-content .spotlight-card.project:hover { border-color: #FF2D95 !important; }
+.page-content .project-link,
+.page-content a:hover { text-decoration-color: #FF2D95; }
+.page-content .skill:hover,
+.page-content .filter-btn[aria-pressed="true"],
+.page-content .filter-btn:hover { background: #FF2D95 !important; border-color: #FF2D95 !important; color: #0A0A0A !important; }
+.page-content #contact { background: linear-gradient(120deg, rgba(0,123,167,.2), rgba(255,45,149,.13)) !important; }
+@media (prefers-reduced-motion: reduce) {
+  .brand-motion-bg { opacity: .55 !important; }
+}
