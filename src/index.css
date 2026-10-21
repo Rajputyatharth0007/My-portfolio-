@@ -1219,30 +1219,3 @@ html, body, #root { min-height: 100%; background: #0A0A0A !important; }
 @media (prefers-reduced-motion: reduce) {
   .brand-motion-bg { opacity: .72 !important; }
 }
-
-
-/* Richer molten brand background: broader luminous flows, while preserving readable content. */
-.brand-motion-bg {
-  background: #0A0A0A !important;
-  isolation: isolate;
-}
-.brand-motion-bg .molten-metal-container {
-  filter: saturate(1.18) contrast(1.06);
-}
-.brand-motion-bg .molten-metal-canvas {
-  display: block;
-  opacity: 1;
-}
-.page-content .hero-copy-block {
-  background: rgba(10,10,10,.62) !important;
-  border-color: rgba(0,123,167,.24) !important;
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-}
-.page-content header {
-  border-image: linear-gradient(90deg, rgba(0,123,167,.72), rgba(255,45,149,.72)) 1 !important;
-}
-@media (max-width: 680px) {
-  .brand-motion-bg .molten-metal-container { filter: saturate(1.08) contrast(1.03); }
-  .page-content .hero-copy-block { background: rgba(10,10,10,.78) !important; }
-}
