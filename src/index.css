@@ -1350,3 +1350,19 @@ html, body, #root { min-height: 100%; background: #0A0A0A !important; }
 #root .page-content .social-link:focus-visible { outline:2px solid #FF2D95; outline-offset:3px; }
 @media (max-width:680px) { #root .page-content .social-links { gap:8px; } #root .page-content .social-link { padding:10px 12px; } }
 @media (prefers-reduced-motion:reduce) { #root .page-content .social-link { transition:none; } }
+
+
+/* Final clean portrait: neutral edge, no colored halo, no text overlays. */
+#root .page-content .portrait-frame {
+  border: 1px solid rgba(255,255,255,.16) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+#root .page-content .portrait-panel:hover .portrait-frame {
+  border-color: rgba(255,255,255,.24) !important;
+  box-shadow: none !important;
+}
+#root .page-content .portrait-frame::before {
+  box-shadow: none !important;
+}
