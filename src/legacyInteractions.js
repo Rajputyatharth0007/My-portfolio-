@@ -79,5 +79,22 @@ export function runLegacyInteractions() {
     cleanups.push(() => navObserver.disconnect());
   }
 
+  // Subtle pointer-following light is limited to project cards and disabled for reduced motion.
+  const projectCards = [...document.querySelectorAll('#work .project')];
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    projectCards.forEach(card => {
+      listen(card, 'pointermove', event => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--spot-x', (event.clientX - rect.left) + 'px');
+        card.style.setProperty('--spot-y', (event.clientY - rect.top) + 'px');
+      });
+      listen(card, 'pointerleave', () => {
+        card.style.removeProperty('--spot-x');
+        card.style.removeProperty('--spot-y');
+      });
+    });
+  }
+
   return () => cleanups.forEach(cleanup => cleanup());
 }
