@@ -1124,3 +1124,98 @@ html, body, #root, .page-content { background-color: #0A0A0A !important; }
 @media (prefers-reduced-motion: reduce) {
   .brand-motion-bg { opacity: .55 !important; }
 }
+
+
+/* MoltenMetal: exact shader animation behind the portfolio content. */
+html, body, #root { min-height: 100%; background: #0A0A0A !important; }
+.brand-motion-bg {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: auto;
+  background: #0A0A0A !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}
+.brand-motion-bg .molten-metal-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.brand-motion-bg .molten-metal-canvas {
+  width: 100%;
+  height: 100%;
+}
+.page-content {
+  position: relative;
+  z-index: 1 !important;
+  background: transparent !important;
+}
+.page-content header {
+  background: rgba(10,10,10,.82) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.page-content .hero,
+.page-content .section,
+.page-content #about,
+.page-content #curiosity,
+.page-content #toolkit,
+.page-content footer,
+.page-content .signal-marquee {
+  background-color: transparent !important;
+}
+.page-content .hero-copy-block {
+  background: rgba(10,10,10,.72);
+  border: 1px solid rgba(0,123,167,.16);
+  box-shadow: 0 18px 60px rgba(0,0,0,.14);
+}
+.page-content .project,
+.page-content .learn-card,
+.page-content .tool,
+.page-content .spotlight-card.project {
+  background: rgba(10,10,10,.78) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: rgba(0,123,167,.38) !important;
+}
+.page-content .project:hover,
+.page-content .learn-card:hover,
+.page-content .tool:hover,
+.page-content .spotlight-card.project:hover {
+  border-color: #FF2D95 !important;
+  box-shadow: 0 16px 44px rgba(0,0,0,.28), 0 0 24px rgba(0,123,167,.1);
+}
+.page-content .btn.primary,
+.page-content #contact .btn {
+  background: linear-gradient(115deg, #007BA7 0%, #FF2D95 100%) !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+.page-content .eyebrow:before,
+.page-content .progress {
+  background: linear-gradient(90deg, #007BA7, #FF2D95) !important;
+}
+.page-content .hero h1 .accent,
+.page-content .hero h1 .lime {
+  background: linear-gradient(105deg, #42c4ee 0%, #007BA7 32%, #FF2D95 78%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+.page-content a:focus-visible,
+.page-content button:focus-visible {
+  outline: 2px solid #FF2D95;
+  outline-offset: 4px;
+}
+@media (max-width: 680px) {
+  .brand-motion-bg .molten-metal-container { opacity: .78; }
+  .page-content .hero-copy-block { background: rgba(10,10,10,.84); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-motion-bg { opacity: .72 !important; }
+}
